@@ -1,7 +1,10 @@
 <?php
 
+
+use App\Http\Controllers\LogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,15 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("check", function(){
-    $check = [
-        [
-            "hard_key"=>"79e877b0cc34729bae2b867d5f479ce0",
-            "ip"=>"138.186.39.191",
-            "datetime"=>"24/03/2021 23:27:20"
-        ]
-    ];
-
-    return $check;
-
-});
+Route::get('log', [LogController::class, 'Index']);
+Route::post('log', [LogController::class, 'Index']);
