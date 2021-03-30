@@ -2,7 +2,9 @@
 
 
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\MachineController;
 use App\Http\Controllers\UpdateController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,10 +24,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('log', [LogController::class, 'Index']);
+
+/*
+ * Rotas da Maquina 
+ */
+Route::post('machineAdd', [MachineController::class, 'machineAdd']);
 Route::post('log', [LogController::class, 'Check']);
 
-/* 
+/*
  * Verificações de update 
  */
 Route::get('checkUpdate', [UpdateController::class, 'Check']);
