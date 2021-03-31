@@ -36,3 +36,10 @@ Route::post('logAdd', [LogController::class, 'logAdd']);
  * Verificações de update 
  */
 Route::get('checkUpdate', [UpdateController::class, 'Check']);
+
+/*
+ * Rotas de utilidade 
+ */
+Route::get('get_ip', function (Request $request) {
+    return $request->ip();
+});
