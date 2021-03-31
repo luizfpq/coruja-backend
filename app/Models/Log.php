@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
 {
+    protected $fillable = ['hard_hash', 'ip', 'status', 'action'];
+
     use HasFactory;
 
-    protected  $fillable = ['hard_hash', 'ip', 'status', 'action'];
+    
 }
