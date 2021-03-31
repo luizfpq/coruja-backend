@@ -18,7 +18,8 @@ class LogController extends Controller
             $log = Log::create([
                 'hard_hash'=> $request->input('hard_hash'),
                 'ip'=> $request->input('ip'),
-                'hard_hash_status'=> $request->input('hard_hash_status')
+                'hard_hash_status'=> $request->input('hard_hash_status'),
+                'action'=>$request->input('action')
             ]);
             return $log;
     }

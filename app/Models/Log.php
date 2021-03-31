@@ -9,5 +9,5 @@ class Log extends Model
 {
     use HasFactory;
 
-    protected  $fillable = ['hard_hash', 'ip', 'hard_hash_status'];
+    protected  $fillable = ['hard_hash', 'ip', 'hard_hash_status', 'action'];
 }
