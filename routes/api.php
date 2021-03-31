@@ -29,7 +29,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  * Rotas da Maquina 
  */
 Route::post('machineAdd', [MachineController::class, 'machineAdd']);
-Route::post('log', [LogController::class, 'Check']);
+Route::get('log', [LogController::class, 'Index']);
+Route::post('logAdd', [LogController::class, 'logAdd']);
 
 /*
  * Verificações de update 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Log;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class LogController extends Controller
@@ -12,8 +13,13 @@ class LogController extends Controller
        return Log::all();
     }
 
-    public function Check()
+    public function logAdd(Request $request)
     {
-        return 'ok';
+            $log = Log::create([
+                'hard_hash'=> $request->input('hard_hash'),
+                'ip'=> $request->input('ip'),
+                'hard_hash_status'=> $request->input('hard_hash_status')
+            ]);
+            return $log;
     }
 }
